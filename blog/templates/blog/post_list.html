@@ -7,16 +7,12 @@
             <h1><a href="/">Xunito's Blog</a></h1>
         </div>
 
-        <div>
-            <p>publicado: 15.05.2020, 17:00</p>
-            <h2><a href="">Welcome to Xunito's Blog</a></h2>
-            <p>It's nice to see you here, my name is Eduardo. I'm a software development student currently in the 3rd semester on a federal institute in Brazil.<br>You can find others projects developed by me in:</p>
-        </div>
-
-        <div>
-            <p>publicado: 15.05.2020, 17:14</p>
-            <h2><a href="">My way to code</a></h2>
-            <p>Everybody has his own way to code, mine is to listen to some good music while I'm on fire, when I get stuck I need to stop the music and think more clearly.</p>
-        </div>
+        {% for post in posts %}
+        	<div>
+    			<p>Published: {{ post.published_date }}</p>
+    			<h2><a href="">{{ post.title }}</a></h2>
+    			<p>{{ post.text|linebreaksbr }}</p>
+        	</div>
+       	{% endfor %}
     </body>
 </html>
